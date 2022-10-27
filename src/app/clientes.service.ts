@@ -20,4 +20,8 @@ export class ClientesService {
   create(data: any) {
     return this.http.post(`${API_BASE}/clientes`, data);
   }
+
+  update(data: any) {
+    return this.http.put(`${API_BASE}/clientes/id`, data);
+  }
 }
