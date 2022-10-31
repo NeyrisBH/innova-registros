@@ -1,0 +1,17 @@
+.buttons-acciones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.buttons-acciones button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-header-flex {
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}

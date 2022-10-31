@@ -8,14 +8,40 @@ import { ClientesService } from './clientes.service';
 })
 export class AppComponent implements OnInit {
   clientes: any[] = [];
+  nuevoCliente = {
+    identificacion: '',
+    nombres: '',
+    apellidos: '',
+    email: '',
+    telefono: '',
+    direccion: ''
+  }
 
   constructor(
     private clienteService: ClientesService
-  ) {}
+  ) { }
   ngOnInit(): void {
-    this.clienteService.getAll()
-    .subscribe((data: any) => this.clientes = data._embedded.clientes);
+    this.load();
   }
 
+  load() {
+    this.clienteService.getAll()
+      .subscribe((data: any) => this.clientes = data._embedded.clientes);
+  }
 
+  crear() {
+    this.clienteService.create(this.nuevoCliente)
+      .subscribe(() => {
+        this.load();
+        this.nuevoCliente = {
+          identificacion: '',
+          nombres: '',
+          apellidos: '',
+          email: '',
+          telefono: '',
+          direccion: ''
+        }
+      })
+  }
 }
+
