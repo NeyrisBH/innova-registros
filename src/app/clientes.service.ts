@@ -21,7 +21,11 @@ export class ClientesService {
     return this.http.post(`${API_BASE}/clientes`, data);
   }
 
-  update(data: any) {
-    return this.http.put(`${API_BASE}/clientes/id`, data);
+  update(id: number, cliente: ClientesService) {
+    return this.http.put(`${API_BASE}/clientes/${id}`, cliente);
   }
+
+  delete(id: number){
+    return this.http.delete(`${API_BASE}/clientes/${id}`);
+  }   
 }
