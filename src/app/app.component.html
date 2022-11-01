@@ -93,70 +93,48 @@
 <!-- End Modal - Register -->
 
 <!-- Modal - Edit -->
-<div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="editarModalLabel"
+<div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel"
   aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Editar cliente</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form class="row g-3 needs-validation" novalidate>
+        <form class="row g-4" (ngSubmit)="crear()">
           <div class="col-md-4">
-            <label for="validationCustom01" class="form-label">Nombres</label>
-            <input type="text" class="form-control" id="validationCustom01" value="" required>
-            <div class="valid-feedback">
-              ¡Se ve bien!
-            </div>
+            <label for="identificacion">Número de identificación</label>
+            <input type="text" class="form-control" id="identificacion" name="identificacion"
+              [(ngModel)]="nuevoCliente.identificacion">
           </div>
           <div class="col-md-4">
-            <label for="validationCustom02" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-            <div class="valid-feedback">
-              ¡Se ve bien!
-            </div>
+            <label for="nombres">Nombres</label>
+            <input type="text" class="form-control" id="nombres" name="nombres" [(ngModel)]="nuevoCliente.nombres">
           </div>
           <div class="col-md-4">
-            <label for="validationCustomUsername" class="form-label">Nombre de usuario</label>
-            <div class="input-group has-validation">
-              <span class="input-group-text" id="inputGroupPrepend">@</span>
-              <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
-                required>
-              <div class="invalid-feedback">
-                Por favor, elije un nombre de usuario.
-              </div>
-            </div>
+            <label for="apellidos">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" name="apellidos"
+              [(ngModel)]="nuevoCliente.apellidos">
           </div>
-          <div class="col-md-6">
-            <label for="validationCustom03" class="form-label">Ciudad</label>
-            <input type="text" class="form-control" id="validationCustom03" required>
-            <div class="invalid-feedback">
-              Proporciona una ciudad válida.
-            </div>
+          <div class="col-md-4">
+            <label for="email">Correo electrónico</label>
+            <input type="text" class="form-control" id="email" name="email" [(ngModel)]="nuevoCliente.email">
           </div>
-          <div class="col-md-3">
-            <label for="validationCustom04" class="form-label">Estado</label>
-            <select class="form-select" id="validationCustom04" required>
-              <option selected disabled value="">Elige...</option>
-              <option>...</option>
-            </select>
-            <div class="invalid-feedback">
-              Selecciona un estado válido.
-            </div>
+          <div class="col-md-4">
+            <label for="telefono">Telefono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" [(ngModel)]="nuevoCliente.telefono">
           </div>
-          <div class="col-md-3">
-            <label for="validationCustom05" class="form-label">Código postal</label>
-            <input type="text" class="form-control" id="validationCustom05" required>
-            <div class="invalid-feedback">
-              Proporciona un código postal válido.
-            </div>
+          <div class="col-md-4">
+            <label for="direccion">Dirección</label>
+            <input type="text" class="form-control" id="direccion" name="direccion"
+              [(ngModel)]="nuevoCliente.direccion">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button class="btn btn-primary">Guardar</button>
           </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Guardar cambios</button>
       </div>
     </div>
   </div>

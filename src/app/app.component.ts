@@ -43,5 +43,9 @@ export class AppComponent implements OnInit {
         }
       })
   }
+
+  edit(clientes: any) {
+    this.clientes = clientes
+  }
 }
 
