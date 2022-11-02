@@ -47,5 +47,13 @@ export class AppComponent implements OnInit {
   edit(clientes: any) {
     this.clientes = clientes
   }
+
+  delete(data: any) {
+    this.clienteService.delete(data._embedded.clientes._links.self.href)
+    .subscribe(() => {
+      this.load();
+    });
+  }
+
 }
 
