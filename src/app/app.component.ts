@@ -49,9 +49,9 @@ export class AppComponent implements OnInit {
   }
 
   delete(data: any) {
-    this.clienteService.delete(data._embedded.clientes._links.self.href)
+    this.clienteService.delete(data._links.self.href)
     .subscribe(() => {
-      this.load();
+      this.clienteService.getAll();
     });
   }
 
